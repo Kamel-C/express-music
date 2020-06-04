@@ -11,7 +11,7 @@ const sanitizer = (action) => {
     case "album":
       return check("album").isString().trim().escape();
     case "genre":
-      return check("genre").isArray();
+      return check("genre").isString();
     case "year":
       return check("year").isString().trim().escape();
     case "cover":

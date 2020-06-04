@@ -33,8 +33,8 @@ MusicRouter.post(
     sanitizer("cover"),
   ],
   async (req, res) => {
-    if (checkReqStatus(req)) return errorResp;
-    const resp = await music.addOneSong(body);
+    if (checkReqStatus(req)) return res.json(errorResp);
+    const resp = await music.addOneSong(req.body);
     res.json(resp);
   }
 );
@@ -51,7 +51,7 @@ MusicRouter.put(
   ],
   async (req, res) => {
     if (checkReqStatus(req)) return errorResp;
-    const resp = await music.updateSong(body);
+    const resp = await music.updateSong(req.body);
     res.json(resp);
   }
 );

@@ -23,7 +23,7 @@ exports.checkResStatus = (obj) => {
 };
 
 exports.checkReqStatus = (req) => {
-  const errors = validationResult();
+  const errors = validationResult(req);
   if (!errors.isEmpty()) return true;
   else return false;
 };
